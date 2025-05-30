@@ -391,17 +391,14 @@ body.dark-mode #pageLoader {
       <h2>Latest Posts</h2>
       <div class="projects-grid">
         <div class="card fade-in">
-          <h3>Solubility Modeling</h3>
-          <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
-        </div>
+          <div onclick="openModal('modal1')" style="cursor:pointer;"><h3>Solubility Modeling</h3>
+          <p>ML-based prediction of GaN solubility in supercritical ammonia.</p></div></div>
         <div class="card fade-in">
-          <h3>Silica Extraction</h3>
-          <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
-        </div>
+          <div onclick="openModal('modal2')" style="cursor:pointer;"><h3>Silica Extraction</h3>
+          <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p></div></div>
         <div class="card fade-in">
-          <h3>ANN Fault Detection</h3>
-          <p>Neural network model for batch reactor fault classification.</p>
-        </div>
+          <div onclick="openModal('modal3')" style="cursor:pointer;"><h3>ANN Fault Detection</h3>
+          <p>Neural network model for batch reactor fault classification.</p></div></div>
       </div>
     
   </div>
@@ -476,5 +473,40 @@ body.dark-mode #pageLoader {
       document.body.classList.toggle('dark-mode');
     });
   </script>
+
+<!-- Project Modals -->
+<div id="modal1" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal1')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3>Solubility Modeling</h3>
+    <p>ML models were used to predict GaN solubility in supercritical ammonia. Features included temperature, pressure, mineralizer type, and water content.</p>
+  </div>
+</div>
+<div id="modal2" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal2')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3>Silica Extraction</h3>
+    <p>Developed a sustainable process using alkaline leaching to extract high-purity silica from rice husk ash, improving efficiency and yield.</p>
+  </div>
+</div>
+<div id="modal3" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal3')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3>ANN Fault Detection</h3>
+    <p>Implemented artificial neural networks to classify faults in batch reactors using simulated process data and feature engineering techniques.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = '';
+}
+</script>
+
 </body>
 </html>
