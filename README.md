@@ -1,2 +1,0 @@
-# profile
-Hasta La Vista
