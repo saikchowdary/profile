@@ -1,0 +1,52 @@
+
+/* ========== Phase 2 Additions ========== */
+
+/* Glassmorphism card style */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Skills section */
+#skills {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #fffde7, #fff8e1);
+}
+.skill-bar {
+  margin: 20px 0;
+}
+.skill-bar h4 {
+  margin-bottom: 5px;
+}
+.skill-bar .bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-bar .bar-fill {
+  height: 16px;
+  background: #ffc107;
+  width: 0%;
+  border-radius: 20px;
+  transition: width 1.5s ease;
+}
+
+/* Parallax section */
+.parallax-section {
+  background-image: url('https://images.unsplash.com/photo-1581093588401-1753f03f47a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2100&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
