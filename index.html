@@ -8,6 +8,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="phase2.css" />
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 12px;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .card:hover { cursor: pointer; }
+  </style>
 </head>
 <body>
   <div id="pageLoader"><h1>Loading...</h1></div>
@@ -20,7 +54,7 @@
       <nav>
         <a href="#">Home</a>
         <a href="#skills">Skills</a>
-        <a href="#">Projects</a>
+        <a href="#projects">Projects</a>
         <a href="#">CV</a>
         <a href="#contact">Contact</a>
         <button class="mode-toggle" id="modeToggle">☀️ / 🌙</button>
@@ -48,47 +82,51 @@
 
   <section id="skills">
     <h2>My Skills</h2>
-    <div class="skill-bar">
-      <h4>Python</h4>
-      <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
-    </div>
-    <div class="skill-bar">
-      <h4>Machine Learning</h4>
-      <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
-    </div>
-    <div class="skill-bar">
-      <h4>Materials Science</h4>
-      <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
-    </div>
-    <div class="skill-bar">
-      <h4>Data Analysis</h4>
-      <div class="bar"><div class="bar-fill" style="width: 88%;"></div></div>
-    </div>
-    <div class="skill-bar">
-      <h4>HTML / CSS</h4>
-      <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
-    </div>
+    <div class="skill-bar"><h4>Python</h4><div class="bar"><div class="bar-fill" style="width: 90%;"></div></div></div>
+    <div class="skill-bar"><h4>Machine Learning</h4><div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
+    <div class="skill-bar"><h4>Materials Science</h4><div class="bar"><div class="bar-fill" style="width: 80%;"></div></div></div>
+    <div class="skill-bar"><h4>Data Analysis</h4><div class="bar"><div class="bar-fill" style="width: 88%;"></div></div></div>
+    <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
   </section>
 
-  <section class="projects-section fade-in">
+  <section id="projects" class="projects-section fade-in">
     <div class="container">
       <h2>Latest Posts</h2>
       <div class="projects-grid">
-        <div class="card fade-in">
+        <div class="card fade-in" onclick="openModal('modal1')">
           <h3>Solubility Modeling</h3>
           <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
         </div>
-        <div class="card fade-in">
+        <div class="card fade-in" onclick="openModal('modal2')">
           <h3>Silica Extraction</h3>
           <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
         </div>
-        <div class="card fade-in">
+        <div class="card fade-in" onclick="openModal('modal3')">
           <h3>ANN Fault Detection</h3>
           <p>Neural network model for batch reactor fault classification.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Modal Definitions -->
+  <div id="modal1" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal1')">✖</button>
+    <h3>Solubility Modeling</h3>
+    <p>This project used machine learning models (XGBoost, Random Forest) to predict GaN solubility in supercritical ammonia using pressure, temperature, mineralizer, and water content.</p>
+    <p><a href="#">[View Paper / GitHub]</a></p>
+  </div></div>
+
+  <div id="modal2" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal2')">✖</button>
+    <h3>Silica Extraction</h3>
+    <p>Performed alkaline leaching experiments on rice husk ash to optimize extraction conditions and improve silica yield by 15%.</p>
+    <p><a href="#">[View Report]</a></p>
+  </div></div>
+
+  <div id="modal3" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal3')">✖</button>
+    <h3>ANN Fault Detection</h3>
+    <p>Trained a neural network to detect faults in batch reactors using synthetic process data and implemented feature selection.</p>
+    <p><a href="#">[View Code]</a></p>
+  </div></div>
 
   <footer class="landing-footer fade-in">
     <div class="container footer-content">
@@ -116,41 +154,15 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
   <script>
-    document.getElementById('modeToggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    lottie.loadAnimation({
-      container: document.getElementById('lottie-hero'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://assets2.lottiefiles.com/packages/lf20_t9gkkhz4.json'
-    });
-
-    window.addEventListener('load', () => {
-      document.getElementById('pageLoader').style.display = 'none';
-    });
-
-    window.onscroll = () => {
-      const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar').style.width = scrolled + "%";
-
-      document.getElementById("scrollTopBtn").style.display = (winScroll > 300) ? "block" : "none";
+    const openModal = id => {
+      document.getElementById(id).style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     };
-
-    document.getElementById("scrollTopBtn").onclick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const closeModal = id => {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = '';
     };
-
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (prefersDark) {
-      document.body.classList.add("dark-mode");
-    }
   </script>
 </body>
 </html>
