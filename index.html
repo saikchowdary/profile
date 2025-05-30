@@ -370,8 +370,10 @@ body.dark-mode #pageLoader {
         <p>Clean Energy Researcher • ML Enthusiast • Materials Scientist</p>
       </div>
     </div>
-    <div class="wave-divider"></div>
-  </section>
+    <div class="wave-divider">
+  </div>
+</section>
+
 
   <section id="skills">
     <h2>My Skills</h2>
@@ -379,8 +381,10 @@ body.dark-mode #pageLoader {
     <div class="skill-bar"><h4>Machine Learning</h4><div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
     <div class="skill-bar"><h4>Materials Science</h4><div class="bar"><div class="bar-fill" style="width: 80%;"></div></div></div>
     <div class="skill-bar"><h4>Data Analysis</h4><div class="bar"><div class="bar-fill" style="width: 88%;"></div></div></div>
-    <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
-  </section>
+    <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
+  </div>
+</section>
+
 
   <section id="projects" class="projects-section fade-in">
     <div class="container">
@@ -399,14 +403,25 @@ body.dark-mode #pageLoader {
           <p>Neural network model for batch reactor fault classification.</p>
         </div>
       </div>
-    </div>
-  </section>
+    
+  </div>
+</section>
 
-<section id="contact" class="contact-section fade-in">
+
+
   <div class="container">
     <h2>Get in Touch</h2>
     <p>Interested in collaborating or learning more? Drop me a message below!</p>
-    <form action="mailto:youremail@example.com" method="post" enctype="text/plain">
+    action="mailto:youremail@example.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;" />
+      <input type="email" name="email" placeholder="Your Email" required
+        style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;" />
+      <textarea name="message" rows="5" placeholder="Your Message" required
+        style="padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;"></textarea>
+      <button type="submit" style="padding: 12px; background: #ff6f00; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+        Send Message
+      </button>
       <label for="name">Name:</label><br/>
       <input type="text" id="name" name="name" required><br/><br/>
 
@@ -417,7 +432,7 @@ body.dark-mode #pageLoader {
       <textarea id="message" name="message" rows="4" required></textarea><br/><br/>
 
       <button type="submit">Send Message</button>
-    </form>
+    
   </div>
 </section>
 
