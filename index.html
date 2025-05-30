@@ -5,11 +5,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saikumar Kasumurthy Rajendra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; transition: background 0.3s, color 0.3s; }
+    body.dark-mode { background: #121212; color: #eee; }
+
+    .landing-header { position: sticky; top: 0; background: #ffc107; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+    #progressBar { height: 4px; background: #ff6f00; position: fixed; top: 0; left: 0; width: 0%; z-index: 2000; }
+
+    #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 999; background: #ff6f00; color: white;
+      border: none; padding: 12px 16px; border-radius: 50%; font-size: 20px; cursor: pointer; }
+
+    #pageLoader { position: fixed; top: 0; left: 0; height: 100%; width: 100%; background: #fff9e6;
+      display: flex; align-items: center; justify-content: center; z-index: 5000; }
+    #pageLoader h1 { font-size: 2rem; animation: blink 1s infinite; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
 </head>
 <body>
-  <header class="landing-header fade-in">
+  <div id="pageLoader"><h1>Loading...</h1></div>
+  <div id="progressBar"></div>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+
+  <header class="landing-header">
     <div class="container">
       <h1 class="logo">Saikumar</h1>
       <nav>
@@ -86,6 +110,7 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
   <script>
     document.getElementById('modeToggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
@@ -99,20 +124,28 @@
       path: 'https://assets2.lottiefiles.com/packages/lf20_t9gkkhz4.json'
     });
 
-    // Fade-in on scroll
-    document.addEventListener("DOMContentLoaded", () => {
-      const faders = document.querySelectorAll('.fade-in');
-      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('appear');
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -100px 0px" });
-      faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-      });
+    window.addEventListener('load', () => {
+      document.getElementById('pageLoader').style.display = 'none';
     });
+
+    window.onscroll = () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + "%";
+
+      document.getElementById("scrollTopBtn").style.display = (winScroll > 300) ? "block" : "none";
+    };
+
+    document.getElementById("scrollTopBtn").onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Auto-detect system dark mode
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) {
+      document.body.classList.add("dark-mode");
+    }
   </script>
 </body>
 </html>
