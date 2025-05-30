@@ -7,10 +7,9 @@
   <title>Saikumar Kasumurthy Rajendra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </head>
 <body>
-  <header class="landing-header">
+  <header class="landing-header fade-in">
     <div class="container">
       <h1 class="logo">Saikumar</h1>
       <nav>
@@ -24,7 +23,7 @@
     </div>
   </header>
 
-  <section class="hero-section">
+  <section class="hero-section fade-in">
     <div class="container hero-content">
       <div class="hero-text">
         <h2>Welcome! I'm Saikumar</h2>
@@ -41,19 +40,19 @@
     <div class="wave-divider"></div>
   </section>
 
-  <section class="projects-section">
+  <section class="projects-section fade-in">
     <div class="container">
       <h2>Latest Posts</h2>
       <div class="projects-grid">
-        <div class="card">
+        <div class="card fade-in">
           <h3>Solubility Modeling</h3>
           <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>Silica Extraction</h3>
           <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
           <h3>ANN Fault Detection</h3>
           <p>Neural network model for batch reactor fault classification.</p>
         </div>
@@ -61,7 +60,7 @@
     </div>
   </section>
 
-  <footer class="landing-footer">
+  <footer class="landing-footer fade-in">
     <div class="container footer-content">
       <div class="footer-left">
         <h2 class="logo-footer">Saikumar</h2>
@@ -98,6 +97,21 @@
       loop: true,
       autoplay: true,
       path: 'https://assets2.lottiefiles.com/packages/lf20_t9gkkhz4.json'
+    });
+
+    // Fade-in on scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -100px 0px" });
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
     });
   </script>
 </body>
