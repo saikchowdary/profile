@@ -41,7 +41,46 @@
       cursor: pointer;
     }
     .card:hover { cursor: pointer; }
-  </style>
+  
+/* Light Mode Defaults */
+body {
+  background: #fff;
+  color: #111;
+}
+
+.card, .modal-content, .footer-links a, .tagline-footer {
+  color: #111;
+}
+
+/* Dark Mode Theme Overrides */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode .card,
+body.dark-mode .modal-content,
+body.dark-mode .footer-links a,
+body.dark-mode .tagline-footer {
+  color: #eee;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card a,
+body.dark-mode .modal-content a {
+  color: #ffcc00;
+}
+
+
+#pageLoader {
+  transition: opacity 0.5s ease-out;
+}
+body.dark-mode #pageLoader {
+  background: #121212;
+  color: white;
+}
+
+</style>
 </head>
 <body>
   <div id="pageLoader"><h1>Loading...</h1></div>
