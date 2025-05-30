@@ -373,6 +373,35 @@ body.dark-mode #pageLoader {
     <div class="wave-divider"></div>
   </section>
 
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-bar"><h4>Python</h4><div class="bar"><div class="bar-fill" style="width: 90%;"></div></div></div>
+    <div class="skill-bar"><h4>Machine Learning</h4><div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
+    <div class="skill-bar"><h4>Materials Science</h4><div class="bar"><div class="bar-fill" style="width: 80%;"></div></div></div>
+    <div class="skill-bar"><h4>Data Analysis</h4><div class="bar"><div class="bar-fill" style="width: 88%;"></div></div></div>
+    <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
+  </section>
+
+  <section id="projects" class="projects-section fade-in">
+    <div class="container">
+      <h2>Latest Posts</h2>
+      <div class="projects-grid">
+        <div class="card fade-in">
+          <h3>Solubility Modeling</h3>
+          <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Silica Extraction</h3>
+          <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>ANN Fault Detection</h3>
+          <p>Neural network model for batch reactor fault classification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="landing-footer fade-in">
     <div class="container footer-content">
       <div class="footer-left">
@@ -392,6 +421,15 @@ body.dark-mode #pageLoader {
       setTimeout(() => {
         loader.style.display = 'none';
       }, 500);
+    });
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) {
+      document.body.classList.add("dark-mode");
+    }
+
+    document.getElementById('modeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
     });
   </script>
 </body>
