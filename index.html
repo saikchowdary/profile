@@ -3,68 +3,464 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saikumar Kaumurthy Rajendra</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-yellow-50 text-gray-900">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saikumar Kasumurthy Rajendra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-  <header class="bg-yellow-400 py-10 text-center shadow-md">
-    <h1 class="text-4xl font-bold">Saikumar Kaumurthy Rajendra</h1>
-    <p class="text-lg mt-2">Masters in Clean Energy Processes | ML Enthusiast | Materials Scientist</p>
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff9e6;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.landing-header {
+  background: #ffc107;
+  color: #000;
+  padding: 1.2rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: inline-block;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.2rem;
+  font-weight: 600;
+}
+
+nav a, .mode-toggle {
+  color: #000;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.mode-toggle:hover, nav a:hover {
+  opacity: 0.85;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #ffd54f, #ffb300);
+  color: #000;
+  padding: 4rem 0 6rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  padding: 0.7rem;
+  border: none;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background: #ff6f00;
+  color: white;
+  padding: 0.7rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-illustration {
+  width: 300px;
+  height: 300px;
+}
+
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #fff9e6;
+  clip-path: ellipse(75% 100% at 50% 100%);
+}
+
+.projects-section {
+  padding: 4rem 0;
+  background: #fff9e6;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.newsletter-section {
+  background: linear-gradient(to right, #ffd54f, #ffb300);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.newsletter-section h2 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  width: 300px;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+.small-note {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.landing-footer {
+  background: #000;
+  color: white;
+  padding: 2rem 1rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-left .logo-footer {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-links a {
+  background: #222;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.footer-social img {
+  width: 24px;
+  margin: 0 0.3rem;
+  background: #333;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.footer-social a {
+  display: inline-block;
+}
+
+.tagline-footer {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 0.3rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: #aaa;
+}
+
+
+/* ========== Phase 2 Additions ========== */
+
+/* Glassmorphism card style */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Skills section */
+#skills {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #fffde7, #fff8e1);
+}
+.skill-bar {
+  margin: 20px 0;
+}
+.skill-bar h4 {
+  margin-bottom: 5px;
+}
+.skill-bar .bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-bar .bar-fill {
+  height: 16px;
+  background: #ffc107;
+  width: 0%;
+  border-radius: 20px;
+  transition: width 1.5s ease;
+}
+
+/* Parallax section */
+.parallax-section {
+  background-image: url('https://images.unsplash.com/photo-1581093588401-1753f03f47a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2100&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+#pageLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff9e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 5000;
+  transition: opacity 0.5s ease-out;
+}
+body
+</style>
+
+<style>
+  body {
+    color: #111;
+    background-color: #fffaf0;
+  }
+  
+  
+  h2, h3, p {
+    color: #111;
+  }
+</style>
+
+</head>
+<body>
+  
+
+  <header class="landing-header">
+    <div class="container">
+      <h1 class="logo">Saikumar</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#">CV</a>
+        <a href="#contact">Contact</a>
+        
+      </nav>
+    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-      <p class="text-lg">
-        I am a dedicated and analytical Chemical Engineer with a focus on sustainable technologies and process optimization.
-        Currently pursuing my MSc in Clean Energy Processes at Friedrich-Alexander University. Passionate about data science,
-        machine learning applications in materials, and carbon conversion technologies.
-      </p>
-    </section>
+  
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Projects & Experience</h2>
-      <ul class="space-y-4 list-disc list-inside">
-        <li>Silica Extraction Internship – Improved silica yield by 15% using alkaline leaching and data analysis.</li>
-        <li>ANN-Based Fault Diagnosis – Developed a 2-stage ML model for fault detection in reactors using Python and LDA.</li>
-        <li>Carbon Capture Heat Exchanger – Designed using UNISIM and Excel to improve energy efficiency.</li>
-      </ul>
-    </section>
+  
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
-      <ul class="list-disc ml-6 space-y-2">
-        <li>IBM Data Science – Coursera (2024)</li>
-        <li>Google Advanced Data Analytics – Coursera (2024)</li>
-        <li>NPTEL: Unit Operations of Particulate Matter (2022)</li>
-      </ul>
-    </section>
+<!-- 👇 Animated wave divider between hero and skills section -->
+<div class="wave-container" style="margin-top: -5px;">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" style="width: 100%; height: 150px;">
+    <path d="M0,96L48,101.3C96,107,192,117,288,122.7C384,128,480,128,576,112C672,96,768,64,864,80C960,96,1056,160,1152,160C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          fill="#ffe082">
+      <animate attributeName="d" dur="6s" repeatCount="indefinite"
+        values="
+        M0,96L48,101.3C96,107,192,117,288,122.7C384,128,480,128,576,112C672,96,768,64,864,80C960,96,1056,160,1152,160C1248,160,1344,96,1392,64L1440,32L1440,320L0,320Z;
+        M0,80L48,96C96,112,192,144,288,149.3C384,155,480,133,576,112C672,91,768,69,864,96C960,123,1056,197,1152,186.7C1248,176,1344,80,1392,42.7L1440,5L1440,320L0,320Z;
+        M0,96L48,101.3C96,107,192,117,288,122.7C384,128,480,128,576,112C672,96,768,64,864,80C960,96,1056,160,1152,160C1248,160,1344,96,1392,64L1440,32L1440,320L0,320Z" />
+    </path>
+  </svg>
+</div>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
-      <form class="space-y-4 max-w-md" action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded" required />
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded" required />
-        <textarea name="message" placeholder="Your Message" class="w-full p-2 border rounded" rows="4" required></textarea>
-        <button type="submit" class="bg-yellow-500 px-4 py-2 rounded text-white font-bold">Send Message</button>
-      </form>
-    </section>
-  </main>
 
-  <footer class="bg-yellow-200 py-6 text-center">
-    <p>Contact: <a href="mailto:saikumarckr@gmail.com" class="underline">saikumarckr@gmail.com</a></p>
-    <div class="flex justify-center space-x-6 mt-2 text-xl">
-      <a href="https://www.linkedin.com/in/saikumar183" target="_blank"><i data-lucide="linkedin"></i></a>
-      <a href="https://www.instagram.com/sai.k.chowdary" target="_blank"><i data-lucide="instagram"></i></a>
-      <a href="mailto:saikumarckr@gmail.com"><i data-lucide="mail"></i></a>
+
+
+<section id="projects" class="projects-section fade-in">
+  <div class="container">
+    <h2 style="text-align: center; color: #222; font-size: 28px;">Latest Posts</h2>
+    <div class="projects-grid">
+      <div class="card fade-in" onclick="openModal('modal1')" style="cursor:pointer;">
+        <h3 style="color: #333;">Solubility Modeling</h3>
+        <p style="color: #444;">ML-based prediction of GaN solubility in supercritical ammonia.</p>
+      </div>
+      <div class="card fade-in" onclick="openModal('modal2')" style="cursor:pointer;">
+        <h3 style="color: #333;">Silica Extraction</h3>
+        <p style="color: #444;">Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
+      </div>
+      <div class="card fade-in" onclick="openModal('modal3')" style="cursor:pointer;">
+        <h3 style="color: #333;">ANN Fault Detection</h3>
+        <p style="color: #444;">Neural network model for batch reactor fault classification.</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    lucide.createIcons();
-  </script>
+<footer style="background:#fffaf0; color:#111; padding: 40px 20px;" class="landing-footer fade-in" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;" style="background:#fffaf0; color:#111;" style="background:#fffaf0; color:#111; padding: 40px 20px;" style="background:#fffaf0; color:#111; padding: 40px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div class="container footer-content">
+      <div class="footer-left" style="color:#111;">
+        <h2 class="logo-footer">Saikumar</h2>
+        <p class="tagline-footer" style="color:#111;">Hakuna Matata | Powered by Curiosity ⚡</p>
+      </div>
+    </div>
+    
+<div class="footer-social" style="margin-left: auto; display: flex; gap: 10px;" style="margin-left: auto;">
+  <a href="https://www.linkedin.com/in/saikumar183" target="_blank" title="LinkedIn">
+    <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn"/>
+  </a>
+  <a href="https://www.instagram.com/sai.k.chowdary?igsh=eXJvOTNxNm9rbDls&utm_source=qr" target="_blank" title="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"/>
+  </a>
+</div>
+
+</div>
+  <div class="copyright" style="color:#111;">
+      <p style="color: #444;">&copy; 2025 | All Rights Reserved | Saikumar Kasumurthy Rajendra</p>
+    </div>
+  </div>
+</footer>
+
+  
+
+<!-- Project Modals -->
+<div id="modal1" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal1')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3 style="color: #333;">Solubility Modeling</h3>
+    <p style="color: #444;">ML models were used to predict GaN solubility in supercritical ammonia. Features included temperature, pressure, mineralizer type, and water content.</p>
+  </div>
+</div>
+<div id="modal2" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal2')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3 style="color: #333;">Silica Extraction</h3>
+    <p style="color: #444;">Developed a sustainable process using alkaline leaching to extract high-purity silica from rice husk ash, improving efficiency and yield.</p>
+  </div>
+</div>
+<div id="modal3" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div class="modal-content" style="background:white; padding:2rem; border-radius:8px; max-width:500px; position:relative;">
+    <button onclick="closeModal('modal3')" style="position:absolute; top:10px; right:15px; background:none; border:none; font-size:18px;">✖</button>
+    <h3 style="color: #333;">ANN Fault Detection</h3>
+    <p style="color: #444;">Implemented artificial neural networks to classify faults in batch reactors using simulated process data and feature engineering techniques.</p>
+  </div>
+</div>
+
+
+
 </body>
 </html>
