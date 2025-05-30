@@ -365,7 +365,38 @@ body.dark-mode #pageLoader {
 
   
 
-  <footer class="landing-footer fade-in" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  
+<section id="skills">
+  <h2 style="text-align: center; color: #333; padding-top: 40px;">My Skills</h2>
+  <div class="skill-bar"><h4>Python</h4><div class="bar"><div class="bar-fill" style="width: 90%;"></div></div></div>
+  <div class="skill-bar"><h4>Machine Learning</h4><div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
+  <div class="skill-bar"><h4>Materials Science</h4><div class="bar"><div class="bar-fill" style="width: 80%;"></div></div></div>
+  <div class="skill-bar"><h4>Data Analysis</h4><div class="bar"><div class="bar-fill" style="width: 88%;"></div></div></div>
+  <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
+</section>
+
+
+<section id="projects" class="projects-section fade-in">
+  <div class="container">
+    <h2 style="text-align: center;">Latest Posts</h2>
+    <div class="projects-grid">
+      <div class="card fade-in" onclick="openModal('modal1')" style="cursor:pointer;">
+        <h3>Solubility Modeling</h3>
+        <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
+      </div>
+      <div class="card fade-in" onclick="openModal('modal2')" style="cursor:pointer;">
+        <h3>Silica Extraction</h3>
+        <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
+      </div>
+      <div class="card fade-in" onclick="openModal('modal3')" style="cursor:pointer;">
+        <h3>ANN Fault Detection</h3>
+        <p>Neural network model for batch reactor fault classification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="landing-footer fade-in" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
     <div class="container footer-content">
       <div class="footer-left">
         <h2 class="logo-footer">Saikumar</h2>
