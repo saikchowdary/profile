@@ -2,100 +2,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saikumar Kaumurthy Rajendra</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff8e1;
-            color: #333;
-        }
-        header {
-            background-color: #ffd600;
-            padding: 2em;
-            text-align: center;
-        }
-        section {
-            padding: 2em;
-        }
-        footer {
-            background-color: #fff59d;
-            padding: 1em;
-            text-align: center;
-        }
-        a {
-            color: #ff8f00;
-            text-decoration: none;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-        form input, form textarea {
-            margin: 0.5em 0;
-            padding: 0.5em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        form button {
-            background-color: #ffb300;
-            border: none;
-            padding: 0.7em;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saikumar Kaumurthy Rajendra</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-    <header>
-        <h1>Saikumar Kaumurthy Rajendra</h1>
-        <p>Masters in Clean Energy Processes | ML Enthusiast | Materials Scientist</p>
-    </header>
+<body class="bg-yellow-50 text-gray-900">
+
+  <header class="bg-yellow-400 py-10 text-center shadow-md">
+    <h1 class="text-4xl font-bold">Saikumar Kaumurthy Rajendra</h1>
+    <p class="text-lg mt-2">Masters in Clean Energy Processes | ML Enthusiast | Materials Scientist</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
     <section>
-        <h2>About Me</h2>
-        <p>Dedicated and analytical Chemical Engineer currently pursuing my Master's in Clean Energy Processes at Friedrich-Alexander-Universität Erlangen-Nürnberg. Experienced in data analysis, process optimization, and sustainable technologies.</p>
+      <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+      <p class="text-lg">
+        I am a dedicated and analytical Chemical Engineer with a focus on sustainable technologies and process optimization.
+        Currently pursuing my MSc in Clean Energy Processes at Friedrich-Alexander University. Passionate about data science,
+        machine learning applications in materials, and carbon conversion technologies.
+      </p>
     </section>
+
     <section>
-        <h2>Projects & Experience</h2>
-        <ul>
-            <li>Internship at Mitra Increst: Optimized silica extraction process from rice husk ash, improving yield by 15%</li>
-            <li>ANN-based Process & Fault Diagnosis in Batch Reactor (MSE: 0.0054)</li>
-            <li>Heat Exchanger Design for Carbon Capture using UNISIM</li>
-        </ul>
+      <h2 class="text-2xl font-semibold mb-4">Projects & Experience</h2>
+      <ul class="space-y-4 list-disc list-inside">
+        <li>Silica Extraction Internship – Improved silica yield by 15% using alkaline leaching and data analysis.</li>
+        <li>ANN-Based Fault Diagnosis – Developed a 2-stage ML model for fault detection in reactors using Python and LDA.</li>
+        <li>Carbon Capture Heat Exchanger – Designed using UNISIM and Excel to improve energy efficiency.</li>
+      </ul>
     </section>
+
     <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>IBM Data Science – Coursera (2024)</li>
-            <li>Google Advanced Data Analytics – Coursera (2024)</li>
-            <li>NPTEL: Unit Operations of Particulate Matter (2022)</li>
-        </ul>
+      <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>IBM Data Science – Coursera (2024)</li>
+        <li>Google Advanced Data Analytics – Coursera (2024)</li>
+        <li>NPTEL: Unit Operations of Particulate Matter (2022)</li>
+      </ul>
     </section>
+
     <section>
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+      <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+      <form class="space-y-4 max-w-md" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded" required />
+        <textarea name="message" placeholder="Your Message" class="w-full p-2 border rounded" rows="4" required></textarea>
+        <button type="submit" class="bg-yellow-500 px-4 py-2 rounded text-white font-bold">Send Message</button>
+      </form>
     </section>
-    <footer>
-        <p>Contact: <a href="mailto:saikumarckr@gmail.com">saikumarckr@gmail.com</a> | +49 176 47318406</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/sai.k.chowdary" target="_blank">Instagram</a> |
-            <a href="https://www.linkedin.com/in/saikumar183" target="_blank">LinkedIn</a>
-        </div>
-    </footer>
+  </main>
+
+  <footer class="bg-yellow-200 py-6 text-center">
+    <p>Contact: <a href="mailto:saikumarckr@gmail.com" class="underline">saikumarckr@gmail.com</a></p>
+    <div class="flex justify-center space-x-6 mt-2 text-xl">
+      <a href="https://www.linkedin.com/in/saikumar183" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="https://www.instagram.com/sai.k.chowdary" target="_blank"><i data-lucide="instagram"></i></a>
+      <a href="mailto:saikumarckr@gmail.com"><i data-lucide="mail"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
