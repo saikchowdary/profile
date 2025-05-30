@@ -7,6 +7,7 @@
   <title>Saikumar Kasumurthy Rajendra</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </head>
 <body>
   <header class="landing-header">
@@ -17,7 +18,7 @@
         <a href="#">About</a>
         <a href="#">Projects</a>
         <a href="#">CV</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
         <button class="mode-toggle" id="modeToggle">☀️ / 🌙</button>
       </nav>
     </div>
@@ -34,7 +35,7 @@
         </div>
       </div>
       <div class="hero-illustration">
-        <img src="project1.jpg" alt="Illustration" />
+        <div id="lottie-hero" style="width: 300px; height: 300px;"></div>
       </div>
     </div>
     <div class="wave-divider"></div>
@@ -42,7 +43,7 @@
 
   <section class="projects-section">
     <div class="container">
-      <h2>Latest Work</h2>
+      <h2>Latest Posts</h2>
       <div class="projects-grid">
         <div class="card">
           <h3>Solubility Modeling</h3>
@@ -60,14 +61,33 @@
     </div>
   </section>
 
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
   <footer class="landing-footer">
     <p>Connect with me on <a href="https://www.linkedin.com/in/saikumar183" target="_blank">LinkedIn</a></p>
   </footer>
 
   <script>
-    const toggle = document.getElementById('modeToggle');
-    toggle.addEventListener('click', () => {
+    document.getElementById('modeToggle').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+    });
+
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-hero'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets2.lottiefiles.com/packages/lf20_t9gkkhz4.json'
     });
   </script>
 </body>
