@@ -9,33 +9,60 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-        <h1>Saikumar Kasumurthy Rajendra</h1>
-        <p class="tagline">hakuna matata</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header class="main-header">
+        <div class="container">
+            <h1>Saikumar Kasumurthy Rajendra</h1>
+            <p class="subtitle">hakuna matata</p>
+            <nav>
+                <a href="#">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main class="main">
-        <section class="hero">
+
+    <section class="hero-section">
+        <div class="container hero">
             <div class="hero-text">
-                <h2>Hello! I'm Saikumar 👋</h2>
-                <p>
-                    A Clean Energy Processes Master's student focused on materials science, data analysis, and machine learning. Passionate about sustainable technologies, predictive modeling, and process optimization.
-                </p>
-                <a href="SaikumarKasumurthyRajendra.CV.pdf" class="button" target="_blank">Download CV</a>
+                <h2>Welcome!</h2>
+                <p>I’m a Master's student in Clean Energy Processes, passionate about materials science, sustainability, and machine learning. Explore my work below.</p>
+                <a href="SaikumarKasumurthyRajendra.CV.pdf" class="btn">Download CV</a>
             </div>
-            <div class="hero-image">
-                <img src="project1.jpg" alt="Data science visual" />
+            <div class="hero-img">
+                <img src="project1.jpg" alt="ML Project" />
             </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>Connect with me on <a href="https://www.linkedin.com/in/saikumar183" target="_blank">LinkedIn</a></p>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>GaN Solubility Prediction</h3>
+                    <p>Machine learning models (RF/XGB) for predicting solubility in supercritical ammonia based on literature data.</p>
+                    <a href="projects.html" class="card-link">View Project</a>
+                </div>
+                <div class="card">
+                    <h3>Silica Extraction from RHA</h3>
+                    <p>Developed and optimized silica yield using alkaline leaching. Lab-scale experiments and trend analysis.</p>
+                    <a href="projects.html" class="card-link">View Project</a>
+                </div>
+                <div class="card">
+                    <h3>ANN-Based Fault Detection</h3>
+                    <p>Designed a neural network to detect and classify faults in batch reactor data using Python + LDA.</p>
+                    <a href="projects.html" class="card-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Connect with me: <a href="https://www.linkedin.com/in/saikumar183" target="_blank">LinkedIn</a></p>
+        </div>
     </footer>
 </body>
 </html>
