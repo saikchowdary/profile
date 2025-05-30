@@ -6,80 +6,324 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saikumar Kasumurthy Rajendra</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="phase2.css" />
   <style>
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      max-width: 500px;
-      width: 90%;
-      border-radius: 12px;
-      position: relative;
-      font-family: 'Poppins', sans-serif;
-    }
-    .modal-content h3 {
-      margin-top: 0;
-    }
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .card:hover { cursor: pointer; }
-  
-/* Light Mode Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: 'Inter', sans-serif;
+  background: #fff9e6;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.landing-header {
+  background: #ffc107;
+  color: #000;
+  padding: 1.2rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: inline-block;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.2rem;
+  font-weight: 600;
+}
+
+nav a, .mode-toggle {
+  color: #000;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.mode-toggle:hover, nav a:hover {
+  opacity: 0.85;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #ffd54f, #ffb300);
+  color: #000;
+  padding: 4rem 0 6rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
   background: #fff;
-  color: #111;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.card, .modal-content, .footer-links a, .tagline-footer {
-  color: #111;
+.search-bar input {
+  padding: 0.7rem;
+  border: none;
+  flex: 1;
+  font-size: 1rem;
 }
 
-/* Dark Mode Theme Overrides */
-body.dark-mode {
-  background: #121212;
-  color: #eee;
-}
-
-body.dark-mode .card,
-body.dark-mode .modal-content,
-body.dark-mode .footer-links a,
-body.dark-mode .tagline-footer {
-  color: #eee;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .card a,
-body.dark-mode .modal-content a {
-  color: #ffcc00;
-}
-
-
-#pageLoader {
-  transition: opacity 0.5s ease-out;
-}
-body.dark-mode #pageLoader {
-  background: #121212;
+.search-bar button {
+  background: #ff6f00;
   color: white;
+  padding: 0.7rem 1rem;
+  border: none;
+  cursor: pointer;
 }
 
+.hero-illustration {
+  width: 300px;
+  height: 300px;
+}
+
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #fff9e6;
+  clip-path: ellipse(75% 100% at 50% 100%);
+}
+
+.projects-section {
+  padding: 4rem 0;
+  background: #fff9e6;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.newsletter-section {
+  background: linear-gradient(to right, #ffd54f, #ffb300);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.newsletter-section h2 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  width: 300px;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+.small-note {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.landing-footer {
+  background: #000;
+  color: white;
+  padding: 2rem 1rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-left .logo-footer {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-links a {
+  background: #222;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.footer-social img {
+  width: 24px;
+  margin: 0 0.3rem;
+  background: #333;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.footer-social a {
+  display: inline-block;
+}
+
+.tagline-footer {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 0.3rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-social {
+  margin-top: 1rem;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+  color: #aaa;
+}
+
+
+/* ========== Phase 2 Additions ========== */
+
+/* Glassmorphism card style */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Skills section */
+#skills {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #fffde7, #fff8e1);
+}
+.skill-bar {
+  margin: 20px 0;
+}
+.skill-bar h4 {
+  margin-bottom: 5px;
+}
+.skill-bar .bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.skill-bar .bar-fill {
+  height: 16px;
+  background: #ffc107;
+  width: 0%;
+  border-radius: 20px;
+  transition: width 1.5s ease;
+}
+
+/* Parallax section */
+.parallax-section {
+  background-image: url('https://images.unsplash.com/photo-1581093588401-1753f03f47a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2100&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
 
 #pageLoader {
   position: fixed;
@@ -100,13 +344,10 @@ body.dark-mode #pageLoader {
   background: #121212;
   color: white;
 }
-
 </style>
 </head>
 <body>
-  <div id="pageLoader"><h1>Loading...</h1></div>
-  <div id="progressBar"></div>
-  <button id="scrollTopBtn" title="Go to top">↑</button>
+  <div id="pageLoader">Loading...</div>
 
   <header class="landing-header">
     <div class="container">
@@ -128,85 +369,15 @@ body.dark-mode #pageLoader {
         <h2>Welcome! I'm Saikumar</h2>
         <p>Clean Energy Researcher • ML Enthusiast • Materials Scientist</p>
       </div>
-      <div class="hero-illustration">
-        <div id="lottie-hero" style="width: 300px; height: 300px;"></div>
-      </div>
     </div>
     <div class="wave-divider"></div>
   </section>
-
-  <section class="parallax-section">
-    <h2>Driven by Innovation. Fueled by Curiosity.</h2>
-    <p>Bridging Clean Energy & Machine Learning</p>
-  </section>
-
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skill-bar"><h4>Python</h4><div class="bar"><div class="bar-fill" style="width: 90%;"></div></div></div>
-    <div class="skill-bar"><h4>Machine Learning</h4><div class="bar"><div class="bar-fill" style="width: 85%;"></div></div></div>
-    <div class="skill-bar"><h4>Materials Science</h4><div class="bar"><div class="bar-fill" style="width: 80%;"></div></div></div>
-    <div class="skill-bar"><h4>Data Analysis</h4><div class="bar"><div class="bar-fill" style="width: 88%;"></div></div></div>
-    <div class="skill-bar"><h4>HTML / CSS</h4><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div></div>
-  </section>
-
-  <section id="projects" class="projects-section fade-in">
-    <div class="container">
-      <h2>Latest Posts</h2>
-      <div class="projects-grid">
-        <div class="card fade-in" onclick="openModal('modal1')">
-          <h3>Solubility Modeling</h3>
-          <p>ML-based prediction of GaN solubility in supercritical ammonia.</p>
-        </div>
-        <div class="card fade-in" onclick="openModal('modal2')">
-          <h3>Silica Extraction</h3>
-          <p>Sustainable silica extraction from rice husk ash via alkaline leaching.</p>
-        </div>
-        <div class="card fade-in" onclick="openModal('modal3')">
-          <h3>ANN Fault Detection</h3>
-          <p>Neural network model for batch reactor fault classification.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal Definitions -->
-  <div id="modal1" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal1')">✖</button>
-    <h3>Solubility Modeling</h3>
-    <p>This project used machine learning models (XGBoost, Random Forest) to predict GaN solubility in supercritical ammonia using pressure, temperature, mineralizer, and water content.</p>
-    <p><a href="#">[View Paper / GitHub]</a></p>
-  </div></div>
-
-  <div id="modal2" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal2')">✖</button>
-    <h3>Silica Extraction</h3>
-    <p>Performed alkaline leaching experiments on rice husk ash to optimize extraction conditions and improve silica yield by 15%.</p>
-    <p><a href="#">[View Report]</a></p>
-  </div></div>
-
-  <div id="modal3" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal3')">✖</button>
-    <h3>ANN Fault Detection</h3>
-    <p>Trained a neural network to detect faults in batch reactors using synthetic process data and implemented feature selection.</p>
-    <p><a href="#">[View Code]</a></p>
-  </div></div>
 
   <footer class="landing-footer fade-in">
     <div class="container footer-content">
       <div class="footer-left">
         <h2 class="logo-footer">Saikumar</h2>
         <p class="tagline-footer">Hakuna Matata | Powered by Curiosity ⚡</p>
-      </div>
-      <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/saikumar183" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn"/>
-        </a>
-        <a href="https://www.instagram.com/sai.k.chowdary?igsh=eXJvOTNxNm9rbDls&utm_source=qr" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"/>
-        </a>
       </div>
     </div>
     <div class="copyright">
@@ -215,14 +386,13 @@ body.dark-mode #pageLoader {
   </footer>
 
   <script>
-    const openModal = id => {
-      document.getElementById(id).style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    };
-    const closeModal = id => {
-      document.getElementById(id).style.display = 'none';
-      document.body.style.overflow = '';
-    };
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('pageLoader');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
+    });
   </script>
 </body>
 </html>
